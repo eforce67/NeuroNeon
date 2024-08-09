@@ -2,6 +2,14 @@
 
 NeuroNeon is an open-source project that uses Ultralytics' YoloV8 to explore convolutional neural networks (CNNs) through Brawl Stars gameplay. It runs on the Null Brawl private server to follow Supercell's rules against bots in multiplayer. **Use at your own risk—I’m not responsible for any account bans.**
 
+## How It Works
+
+NeuroNeon learns to play the game by watching you play. The AI observes your gameplay, capturing your strategies, movements, and decision-making process. Over time, it starts to mimic your playstyle, making it a unique and personalized AI.
+
+Rest assured, collecting the image data is simple and straightforward. You only need about 100 matches in Brawl Stars to gather enough data for the model to start learning. The more you play, the better it understands your style. However, keep in mind that the AI is only as good as the data it learns from—if you make mistakes, so will it.
+
+Currently, NeuroNeon is designed to play with two specific Brawlers: Jacky and Doug. These Brawlers require no aiming skill, making them perfect candidates for this AI. While the model can learn to play decently, the limitations do pose some challenges, which are outlined below.
+
 ## Installation
 
 ### Requirements
@@ -25,14 +33,10 @@ CPU only:
 pip install torch torchvision torchaudio
 ```
 
-## How It Works
-
-NeuroNeon uses YoloV8 for single-class classification to decide the best actions based on what it "sees" on the screen. This method focuses on understanding the content of images rather than just identifying objects, inspired by [subwAI](https://github.com/nikp06/subwAI).
-
 ## AI Model Limitations
 
 - **No Manual Aim Control:** The bot can't precisely control aim and is limited to basic mouse movements. This reduces its ability to respond accurately in real-time situations.
-
+  
 - **Button Spamming:** The bot only spams buttons instead of making thoughtful decisions. This can lead to less effective gameplay, especially in complex or high-pressure situations.
 
 - **Fixed-Time Controls:** The bot's actions are based on fixed timing, which can be a problem in situations where timing is important. Adding more output options for movement duration could help.
@@ -46,6 +50,8 @@ NeuroNeon uses YoloV8 for single-class classification to decide the best actions
 Data is automatically collected each frame when running `data_collection.py`. The bot captures images whenever a key is pressed, syncing your actions with the game frames in near real-time.
 
 ## Training YoloV8
+
+For optimal performance, it’s recommended to use `Yolov8m-cls`, which is the medium classification model for YoloV8. It strikes a good balance between speed and accuracy and runs fast on most devices.
 
 To train your YoloV8 models, check out these resources from Ultralytics:
 
