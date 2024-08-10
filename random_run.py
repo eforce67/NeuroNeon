@@ -3,24 +3,17 @@ import time
 import secrets
 
 import cv2
+import yaml
 import numpy as np
-#import torch
 import win32con
 import win32gui
 import win32ui
-from pynput.keyboard import Key
-#from ultralytics import YOLO
 
-"""gpu = torch.cuda.is_available()
-
-print('Checking PyTorch and CUDA setup...')
-print(f'PyTorch version: {torch.__version__}')
-print(f'CUDA available: {gpu}')
-
-model = YOLO('resources/models/best.pt', task='classify')
-model.cuda() if gpu else model.cpu()
-model.predict('resources/others/Capture.JPG', imgsz=224)"""
-
+# Load configuration file
+with open('resources/config.yaml', 'r') as f:
+    config = yaml.safe_load(f)
+    press_time = config['press_timing']
+    
 threads = []
 
 class ControllerInstance:
@@ -51,7 +44,7 @@ class ControllerInstance:
         
         return img_array
 
-    def send_keys_to_window(self, keys, duration:float=2.0):
+    def send_keys_to_window(self, keys, duration:float=press_time['default']):
         for key in keys:
             if isinstance(key, str):
                 vk_code = ord(key.upper())
@@ -71,24 +64,35 @@ class ControllerInstance:
 
     def move_up(self):
         print('moving up')
-        self.send_keys_to_window([Key.up])
+        self.send_keys_to_window(['w'])
 
     def move_down(self):
         print('moving down')
-        self.send_keys_to_window([Key.down])
+        self.send_keys_to_window(['s'])
 
     def move_left(self):
         print('moving left')
-        self.send_keys_to_window([Key.left])
+        self.send_keys_to_window(['a'])
 
     def move_right(self):
         print('moving right')
-        self.send_keys_to_window([Key.right])
+        self.send_keys_to_window(['d'])
 
     def press_gadget(self):
-        self.send_keys_to_window(['q'], 0.1)
-        
+        self.send_keys_to_window(['q'], press_time['short'])
+    
+    def auto_attack(self):
+        self.send_keys_to_window(['e'], press_time['short'])
+    
+    def auto_super_attack(self):
+        self.send_keys_to_window(['f'], press_time['short'])
+    
+    def press_hypercharge(self):
+        print('pressing the hypercharge button')
+        self.send_keys_to_window(['r'], press_time['short'])
+    
     """def manual_aim(self, x, y):
+        # failed manual aim logic, more work and test must be done.
         create_thread(processes=[send_clicks_to_window(x, y), hold_aim])"""
 
 def create_thread(processes):
@@ -100,8 +104,8 @@ def create_thread(processes):
 def send_keys_loop():
     control = ControllerInstance("LDPlayer")
     combo_keys = {
-        "auto_attack": control.send_keys_to_window(['e'], 0.1),
-        "auto_super_attack": control.send_keys_to_window(['f'], 0.1),
+        "auto_attack": control.auto_attack,
+        "auto_super_attack": control.auto_super_attack,
         "down": control.move_down,
         "gadget": control.press_gadget,
         "left": control.move_left,
@@ -122,9 +126,10 @@ def send_keys_loop():
         
         if isinstance(action, list):
             create_thread(processes=action)
-        
-        for thread in threads: # Cleaning up all threads
-            thread.join()
+            for thread in threads: # Cleaning up all threads
+                thread.join()
+        else:
+            action()
             
         time.sleep(0.01)  # Adjust delay to prevent spamming and to allow proper threading
 
