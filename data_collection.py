@@ -72,7 +72,6 @@ class KeyLogger:
         self.prev_time = time.perf_counter()
         self.fps = 0
         self.frame_count = 0
-        self.prev_key_combo = None
 
     def on_press(self, key):
         try:
@@ -131,11 +130,8 @@ class KeyLogger:
 
         while self.running:
             key_combo = get_key_combo(self.key_states)
-            # Check if the current key combo is different from the previous one
-            if key_combo != self.prev_key_combo:
-                img = screen_shot(hwnd)
-                self.save_image(img, key_combo)
-                self.prev_key_combo = key_combo  # Update the previous key combo
+            img = screen_shot(hwnd)
+            self.save_image(img, key_combo)
                 
             if config['fps_enabled']:
                 self.frame_count += 1
