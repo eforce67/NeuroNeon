@@ -6,7 +6,7 @@ NeuroNeon is an open-source project that uses Ultralytics' YoloV8 to explore con
 
 NeuroNeon learns to play the game by watching you play. The AI observes your gameplay, capturing your strategies, movements, and decision-making process. Over time, it starts to mimic your playstyle, making it a unique and personalized AI.
 
-Rest assured, collecting the image data is simple and straightforward. You only need about 100 matches in Brawl Stars to gather enough data for the model to start learning. The more you play, the better it understands your style. However, keep in mind that the AI is only as good as the data it learns from—if you make mistakes, so will it.
+Rest assured, collecting the image data is straightforward. You only need about 100 matches in Brawl Stars to gather enough data for the model to start learning. The more you play, the better it understands your style. However, keep in mind that the AI is only as good as the data it learns from—if you make mistakes, so will it.
 
 Currently, NeuroNeon is designed to play with two specific Brawlers: Jacky and Doug. These Brawlers require no aiming skill, making them perfect candidates for this AI. While the model can learn to play decently, the limitations do pose some challenges, which are outlined below.
 
@@ -43,11 +43,11 @@ pip install torch torchvision torchaudio
 
 - **No Memory:** The bot can't remember previous images it has seen, so it can't keep track of where enemies have moved.
 
-- **Single Image Classification:** The bot makes only one decision per frame. While this works, multi-label classification could allow it to make several decisions at once, improving gameplay by pressing multiple buttons per frame.
+- **Single Image Classification:** The bot makes only one decision per frame. While this works, multi-label classification could allow it to make several decisions at once, improving gameplay by pressing multiple buttons per frame. Additionally, you can try to overcome this problem by having multiple models predict an outcome for attacking or dodging.
 
 ## Data Collection
 
-Data is automatically collected each frame when running `data_collection.py`. The bot captures images whenever a key is pressed, syncing your actions with the game frames in near real-time.
+Data is automatically collected in each frame when running `data_collection.py`. The bot captures images whenever a key is pressed, syncing your actions with the game frames in near real-time.
 
 ## Training YoloV8
 
@@ -62,7 +62,7 @@ For visual help, watch this video: [How to Train YoloV8](https://youtu.be/9a1oRK
 
 ## Custom Outputs
 
-You can create your own output labels by organizing your datasets into folders. `data_collection.py` will build your dataset, which you can tweak and modify as needed.
+You can create your output labels by organizing your datasets into folders. `data_collection.py` will build your dataset, which you can tweak and modify as needed.
 
 ## Questions?
 
