@@ -43,7 +43,7 @@ pip install torch torchvision torchaudio
 
 - **No Memory:** The bot can't remember previous images it has seen, so it can't keep track of where enemies have moved.
 
-- **Single Image Classification:** The bot makes only one decision per frame. While this works, multi-label classification could allow it to make several decisions at once, improving gameplay by pressing multiple buttons per frame. Additionally, you can try to overcome this problem by having multiple models predict an outcome for attacking or dodging.
+- **Single Image Classification:** The bot makes only one decision per frame. While this works, multi-label classification could allow it to make several decisions at once, improving gameplay by pressing multiple buttons per frame. Additionally, you can try to overcome this problem by having multiple models predict an outcome for different tasks like attacking or dodging.
 
 ## Data Collection
 
