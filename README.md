@@ -1,14 +1,14 @@
 # NeuroNeon
 
-NeuroNeon is an open-source project that uses Ultralytics' YoloV8 to explore convolutional neural networks (CNNs) through Brawl Stars gameplay. It runs on the Null Brawl private server to follow Supercell's rules against bots in multiplayer. **Use at your own risk—I’m not responsible for any account bans.**
+NeuroNeon is an open-source project that uses Ultralytics' YoloV8 to explore convolutional neural networks (CNNs) through Brawl Stars gameplay. The project was tested on the Null Brawl private server to follow Supercell's rules against bots in multiplayer. **Use at your own risk—I’m not responsible for account bans.**
 
 ## How It Works
 
-NeuroNeon learns to play the game by watching you play. The AI observes your gameplay, capturing your strategies, movements, and decision-making process. Over time, it starts to mimic your playstyle, making it a unique and personalized AI.
+NeuroNeon learns to play the game by watching you play. The AI observes your gameplay, capturing your strategies, movements, and decision-making process. Over time, it mimics your playstyle, making it a unique and personalized AI.
 
 Rest assured, collecting the image data is straightforward. You only need about 100 matches in Brawl Stars to gather enough data for the model to start learning. The more you play, the better it understands your style. However, keep in mind that the AI is only as good as the data it learns from—if you make mistakes, so will it.
 
-Currently, NeuroNeon is designed to play with two specific Brawlers: Jacky and Doug. These Brawlers require no aiming skill, making them perfect candidates for this AI. While the model can learn to play decently, the limitations do pose some challenges, which are outlined below.
+Currently, NeuroNeon is designed to play with two specific Brawlers: Jacky and Doug. These Brawlers require no aiming skill, making them perfect candidates for this AI. While the model can learn to play decently, the limitations pose some challenges outlined below.
 
 ## Installation
 
