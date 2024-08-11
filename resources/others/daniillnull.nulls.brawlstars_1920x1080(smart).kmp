@@ -1,0 +1,258 @@
+{
+    "keyboardMappings": [
+        {
+            "class": "ClassKeyboardMacros",
+            "data": {
+                "key": 17,
+                "secondKey": 0,
+                "origin": {
+                    "x": 9000,
+                    "y": 3153
+                },
+                "macros": "type=mouse-lock",
+                "description": "",
+                "moreDescription": "",
+                "extraData": "",
+                "hintVisible": false,
+                "hintOffset": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "class": "ClassKeyboardDisc",
+            "data": {
+                "type": 0,
+                "origin": {
+                    "x": 953,
+                    "y": 8339
+                },
+                "radius": 480,
+                "leftKey": 37,
+                "upKey": 38,
+                "rightKey": 39,
+                "downKey": 40,
+                "description": "",
+                "moreDescription": "",
+                "extraData": "LowDelay",
+                "hintVisible": true,
+                "hintOffset": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "class": "ClassKeyboardMacros",
+            "data": {
+                "key": 16,
+                "secondKey": 0,
+                "origin": {
+                    "x": 9014,
+                    "y": 2249
+                },
+                "macros": "type=cancel orig",
+                "description": "",
+                "moreDescription": "",
+                "extraData": "",
+                "hintVisible": true,
+                "hintOffset": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "class": "ClassKeyboardCurve",
+            "data": {
+                "key": 82,
+                "secondKey": 0,
+                "curve": [
+                    {
+                        "x": 7237,
+                        "y": 9215,
+                        "timing": 0
+                    },
+                    {
+                        "x": 7237,
+                        "y": 9215,
+                        "timing": 64
+                    }
+                ],
+                "extraData": "",
+                "description": "",
+                "moreDescription": "",
+                "hintVisible": true,
+                "hintOffset": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "class": "ClassKeyboardDisc",
+            "data": {
+                "type": 0,
+                "origin": {
+                    "x": 955,
+                    "y": 8329
+                },
+                "radius": 772,
+                "leftKey": 65,
+                "upKey": 87,
+                "rightKey": 68,
+                "downKey": 83,
+                "description": "",
+                "moreDescription": "",
+                "extraData": "",
+                "hintVisible": true,
+                "hintOffset": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "class": "ClassMouseDisc",
+            "data": {
+                "key": 80,
+                "type": 0,
+                "castMode": 1,
+                "waitRelease": true,
+                "noDirection": false,
+                "syntropyMove": false,
+                "synchronousMove": false,
+                "origin": {
+                    "x": 8972,
+                    "y": 7370
+                },
+                "radius": 945,
+                "indicatorRadius": 500,
+                "description": "",
+                "moreDescription": "",
+                "hintVisible": true,
+                "hintOffset": {
+                    "x": 159,
+                    "y": 0
+                },
+                "extraData": ""
+            }
+        },
+        {
+            "class": "ClassKeyboardCurve",
+            "data": {
+                "key": 69,
+                "secondKey": 0,
+                "curve": [
+                    {
+                        "x": 7881,
+                        "y": 8149,
+                        "timing": 0
+                    },
+                    {
+                        "x": 7881,
+                        "y": 8149,
+                        "timing": 91
+                    }
+                ],
+                "extraData": "",
+                "description": "",
+                "moreDescription": "",
+                "hintVisible": true,
+                "hintOffset": {
+                    "x": -76,
+                    "y": -11
+                }
+            }
+        },
+        {
+            "class": "ClassKeyboardCurve",
+            "data": {
+                "key": 81,
+                "secondKey": 0,
+                "curve": [
+                    {
+                        "x": 8585,
+                        "y": 9221,
+                        "timing": 0
+                    },
+                    {
+                        "x": 8579,
+                        "y": 9221,
+                        "timing": 65
+                    },
+                    {
+                        "x": 8579,
+                        "y": 9221,
+                        "timing": 66
+                    }
+                ],
+                "extraData": "",
+                "description": "",
+                "moreDescription": "",
+                "hintVisible": true,
+                "hintOffset": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "class": "ClassKeyboardPoint",
+            "data": {
+                "key": 85,
+                "secondKey": 0,
+                "point": {
+                    "x": 4962,
+                    "y": 9297
+                },
+                "type": 0,
+                "downDuration": 0,
+                "upDuration": 0,
+                "downDurationEx": 0,
+                "upDurationEx": 0,
+                "description": "",
+                "moreDescription": "",
+                "hintVisible": true,
+                "hintOffset": {
+                    "x": 0,
+                    "y": 0
+                },
+                "extraData": ""
+            }
+        }
+    ],
+    "configInfo": {
+        "version": 0,
+        "versionMessage": "",
+        "packageNameType": 1,
+        "packageNamePattern": "com.supercell.brawlstars|com.youzu.bs|com.tencent.tmgp.supercell.brawlstars|com.youzu.bs.*|daniillnull.nulls.brawlstars",
+        "resolutionType": 1,
+        "resolutionPattern": {
+            "width": 1280,
+            "height": 720
+        },
+        "priority": 2,
+        "search": ""
+    },
+    "keyboardConfig": {
+        "mouseCenter": {
+            "x": 5000,
+            "y": 5000
+        },
+        "mouseScrollType": 2,
+        "discType": 0,
+        "advertising": true,
+        "advertiseDuration": 5000,
+        "advertiseText": "",
+        "cancelPoint": {
+            "x": 9063,
+            "y": 2653
+        },
+        "cancelKey": 2,
+        "cancelMode": 0,
+        "cursor": "lolCursor",
+        "extraData": "TextureSize:3518 4066;TextureCoord:0.57333 0.34357 0.53553 0.35784;"
+    }
+}
