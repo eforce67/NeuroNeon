@@ -1,0 +1,97 @@
+# Configuration file for the KeyLogger and data capture script
+
+# The title of the window from which screenshots will be captured. Ensure this matches the exact window title.
+window_name: 'LDPlayer'
+
+# Directory where the captured images will be saved on your computer. 
+# Ensure this directory exists or the script has permission to create it.
+save_dir: 'dataset'
+
+# Option to display Frames Per Second (FPS) on the screenshots. 
+# Set to true to show FPS information, false to hide it.
+fps_enabled: true
+
+# Determines whether to save screenshots when no keys are pressed.
+# Set to true to always save screenshots, false to save only when keys are pressed.
+screenshot_unpressed: false
+
+# The name of your LDplayer emulator
+instance_name: 'LDPlayer'
+
+# Key press timing
+press_timing:
+  default: 1.25
+  short: 0.05
+
+# Training folder path setup
+dataset_path: 'dataset'
+train_folder: 'train'
+test_folder: 'test'
+
+# List of keys the script will monitor for presses. 
+# Each key is used for specific actions or directions.
+keys:
+  - 'w'  # Move up
+  - 'a'  # Move left
+  - 's'  # Move down
+  - 'd'  # Move right
+  - 'q'  # Gadget activation
+  - 'r'  # Hypercharge activation
+  - 'e'  # Auto super attack
+  - 'p'  # Auto attack
+
+# Defines the priority order of action keys. 
+# The script will check these keys in this order to determine the action to perform.
+action_priority:
+  - 'q'  # Highest priority action key
+  - 'r'
+  - 'e'
+  - 'p'  # Lowest priority action key
+
+# Mapping of action keys to their respective actions. 
+# Each key triggers a specific game action.
+actions:
+  q: 'gadget'             # Key 'q' activates a gadget
+  r: 'hypercharge'        # Key 'r' activates hypercharge
+  e: 'auto_super_attack'  # Key 'e' activates an auto super attack
+  p: 'auto_attack'        # Key 'p' activates an auto attack
+
+# Mapping of direction keys to their respective movement directions.
+# These combinations of keys determine the movement direction.
+directions:
+  w: 'up'                 # Key 'w' moves up
+  s: 'down'               # Key 's' moves down
+  a: 'left'               # Key 'a' moves left
+  d: 'right'              # Key 'd' moves right
+  wa: 'upper_left'        # Combination 'w' + 'a' moves upper left
+  aw: 'upper_left'        # Alternative combination 'a' + 'w' moves upper left
+  wd: 'upper_right'       # Combination 'w' + 'd' moves upper right
+  dw: 'upper_right'       # Alternative combination 'd' + 'w' moves upper right
+  sa: 'lower_left'        # Combination 's' + 'a' moves lower left
+  as: 'lower_left'        # Alternative combination 'a' + 's' moves lower left
+  sd: 'lower_right'       # Combination 's' + 'd' moves lower right
+  ds: 'lower_right'       # Alternative combination 'd' + 's' moves lower right
+
+# AI training parameters:
+# The number of GPUs available for training. Set to 0 if not using GPUs.
+num_of_available_gpus: 0
+
+# Number of training epochs. Higher values may improve model accuracy but take more time.
+epochs: 1000
+
+# Image size used for training. Example: 320 means images will be resized to 320x320 pixels.
+# Smaller sizes can speed up training.
+imgsz: 320
+
+# Number of epochs with no improvement after which training will stop.
+patience: 50
+
+# Number of images processed in each training batch.
+batch: 32
+
+# Option to generate plots for training results. 
+# Set to true to generate plots, false to disable plotting.
+plots: true
+
+# The percentage% to split your dataset into
+percent: 12
