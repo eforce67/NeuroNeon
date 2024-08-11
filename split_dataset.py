@@ -46,7 +46,7 @@ def move_subset_to_test(dataset_path, train_folder, test_folder, percentage):
         print(f"Moved {num_files_to_move} files from {subfolder} to test")
 
 # Set the paths and parameters
-dataset_path = config('dataset_path', 'dataset')
+dataset_path = config.get('dataset_path', 'dataset')
 train_folder = config.get('train_folder', 'train')
 test_folder = config.get('test_folder', 'test')
 percentage = config['percent']/100 # 12% generally recommended
